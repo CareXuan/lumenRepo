@@ -22,7 +22,10 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+            "app/Foundation/Helpers/basic.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [
