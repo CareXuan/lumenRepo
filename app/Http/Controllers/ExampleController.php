@@ -16,8 +16,8 @@ class ExampleController extends BaseController
         //
     }
 
-    public function test(TestRequest $request)
+    public function test()
     {
-        rep()->test->test();
+        return api_result()->getOK([]);
     }
 }
