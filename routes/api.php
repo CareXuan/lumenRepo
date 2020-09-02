@@ -6,4 +6,4 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('test', 'ExampleBaseController@test');
+$router->get('test', ['as' => 'test', 'uses' => 'ExampleController@test']);

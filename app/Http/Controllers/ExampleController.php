@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class ExampleBaseController extends BaseController
+use App\Http\Requests\Test\TestRequest;
+
+class ExampleController extends BaseController
 {
     /**
      * Create a new controller instance.
@@ -14,8 +16,8 @@ class ExampleBaseController extends BaseController
         //
     }
 
-    public function test()
+    public function test(TestRequest $request)
     {
-        pocket()->test->test();
+        rep()->test->test();
     }
 }
