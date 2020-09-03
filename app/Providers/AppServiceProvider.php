@@ -7,6 +7,7 @@ use App\Foundation\Modules\Repository\RepositoryHandle;
 use App\Foundation\Modules\Pocket\PocketHandle;
 use App\Foundation\Modules\Response\ApiBusinessResponseHandle;
 use App\Foundation\Modules\Context\ContextHandler;
+use App\Foundation\Handles\AesEncryptHandle;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,6 +32,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton('context',function (){
             return ContextHandler::instance();
+        });
+
+        $this->app->singleton('aes_encrypt',function (){
+            return new AesEncryptHandle();
         });
     }
 }

@@ -29,6 +29,15 @@ if (!function_exists('api_result')){
     }
 }
 
+if (!function_exists('aes_encrypt')){
+    /**
+     * @return \App\Foundation\Handles\AesEncryptHandle
+     */
+    function aes_encrypt(){
+        return app('aes_encrypt');
+    }
+}
+
 if (!function_exists('current_route_name')) {
     /**
      * Get current route name
