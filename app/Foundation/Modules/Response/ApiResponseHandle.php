@@ -24,6 +24,36 @@ class ApiResponseHandle
     }
 
     /**
+     * http请求失败
+     *
+     * @param  array   $data
+     * @param  string  $message
+     * @param  int     $businessCode
+     * @param  array   $header
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function fail(array $data, string $message, int $businessCode, array $header = [])
+    {
+        return $this->failed($message, $data, Response::HTTP_NOT_FOUND, $businessCode, $header);
+    }
+
+    /**
+     * forbidden基础方法
+     *
+     * @param  array   $data
+     * @param  string  $message
+     * @param  int     $businessCode
+     * @param  array   $header
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function forbidden(array $data, string $message, int $businessCode, array $header = [])
+    {
+        return $this->failed($message, $data, Response::HTTP_FORBIDDEN, $businessCode, $header);
+    }
+
+    /**
      * 统一返回成功方法
      *
      * @param $data
